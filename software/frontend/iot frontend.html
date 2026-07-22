@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Retail Store — Demo UI</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body{
+  margin:0;
+  font-family:Arial, Helvetica, sans-serif;
+  background:#0b1220;
+  color:#fff;
+}
+
+.container{
+  display:grid;
+  grid-template-columns:1fr 360px;
+  gap:20px;
+  padding:20px;
+}
+
+/* HEADER */
+header{
+  grid-column:1/-1;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+header h2{
+  margin:0;
+}
+
+.top-btns{
+  display:flex;
+  gap:10px;
+}
+
+button{
+  padding:8px 14px;
+  border:none;
+  border-radius:6px;
+  cursor:pointer;
+  font-weight:600;
+}
+
+.primary{
+  background:#38bdf8;
+  color:#000;
+}
+
+.danger{
+  background:#ec4899;
+  color:#000;
+}
+
+/* PRODUCTS */
+.products{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:14px;
+}
+
+.card{
+  background:#111827;
+  padding:14px;
+  border-radius:10px;
+}
+
+.card h4{
+  margin:0 0 6px;
+}
+
+.card p{
+  margin:2px 0;
+  color:#94a3b8;
+}
+
+.card .price{
+  font-weight:bold;
+  margin:8px 0;
+}
+
+.card button{
+  width:100%;
+  margin-top:8px;
+  background:#3b82f6;
+  color:#fff;
+}
+
+/* CHECKOUT */
+.checkout{
+  background:#111827;
+  border-radius:10px;
+  padding:14px;
+  height:fit-content;
+}
+
+.checkout h3{
+  margin-top:0;
+}
+
+.cart-item{
+  font-size:14px;
+  margin-bottom:6px;
+}
+
+.total{
+  border-top:1px solid #334155;
+  margin-top:10px;
+  padding-top:10px;
+  font-weight:bold;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<header>
+  <h2>Retail Store — Demo UI</h2>
+  <div class="top-btns">
+    <button class="primary" onclick="triggerESP()">Trigger ESP Message</button>
+    <button class="danger" onclick="clearCart()">Clear Cart</button>
+  </div>
+</header>
+
+<!-- PRODUCTS -->
+<div class="products" id="productList"></div>
+
+<!-- CHECKOUT -->
+<div class="checkout">
+  <h3>Checkout</h3>
+  <div id="cart"></div>
+  <div class="total">Total: ₹<span id="total">0</span></div>
+</div>
+
+</div>
+
+<script>
+const products = [
+  {id:1, name:"Kores Glue Stick", size:"8g", price:25},
+  {id:2, name:"Vaseline Cocoa Glow", size:"90ml", price:105},
+  {id:3, name:"Bingo Chips", size:"9g", price:20},
+  {id:4, name:"Classmate Notebook", size:"200 pages", price:60},
+  {id:5, name:"Nivea Men Face Wash", size:"50ml", price:95},
+  {id:6, name:"Colgate Toothpaste", size:"100g", price:120},
+  {id:7, name:"Dairy Milk Chocolate", size:"24g", price:30},
+  {id:8, name:"Parker Pen", size:"Blue Ink", price:85}
+];
+
+let cart = [];
+
+function renderProducts(){
+  const list = document.getElementById("productList");
+  list.innerHTML="";
+  products.forEach(p=>{
+    list.innerHTML += `
+      <div class="card">
+        <h4>${p.name}</h4>
+        <p>${p.size}</p>
+        <div class="price">₹${p.price}</div>
+        <button onclick="addToCart(${p.id})">Add</button>
+      </div>
+    `;
+  });
+}
+
+function addToCart(id){
+  const item = cart.find(i=>i.id===id);
+  if(item) item.qty++;
+  else{
+    const p = products.find(x=>x.id===id);
+    cart.push({id:p.id, name:p.name, price:p.price, qty:1});
+  }
+  renderCart();
+}
+
+function renderCart(){
+  const cartDiv = document.getElementById("cart");
+  cartDiv.innerHTML="";
+  let total = 0;
+
+  cart.forEach(i=>{
+    total += i.price * i.qty;
+    cartDiv.innerHTML += `
+      <div class="cart-item">
+        ${i.name} × ${i.qty} = ₹${i.price * i.qty}
+      </div>
+    `;
+  });
+
+  document.getElementById("total").innerText = total;
+}
+
+function clearCart(){
+  cart = [];
+  renderCart();
+}
+
+function triggerESP(){
+  alert("ESP32 Triggered (simulate HTTP request)");
+}
+
+renderProducts();
+</script>
+
+</body>
+</html>

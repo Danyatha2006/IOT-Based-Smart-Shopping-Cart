@@ -1,124 +1,65 @@
-# 🛒 Smart Shopping Cart using IoT
+An IoT-based smart shopping cart system using ESP32-CAM module and Wi-Fi
+for automated billing in supermarkets.
 
-An IoT-based smart shopping cart system using **ESP32-CAM, RFID, Wi-Fi, PHP, MySQL, HTML, CSS, and JavaScript** to automate billing in shopping malls.
+## Project Overview
+This project aims to automate the billing process in shopping malls
+using IoT technology. Each product is associated with an RFID tag,
+and the cart scans items automatically to calculate the total bill.
 
----
+## Project Images
 
-## 📑 Table of Contents
+### Web Page
+<img src="IoT webpage.jpeg" alt="Web Page" width="500"/>
 
-- [Project Overview](#project-overview)
-- [Project Images](#project-images)
-- [Web Page](#web-page)
-- [System Model](#system-model)
-- [IoT Connection](#iot-connection)
-- [Objectives](#objectives)
-- [Hardware Components](#hardware-components)
-- [Software Components](#software-components)
-- [Working Principle](#working-principle)
-- [IoT & Networking Concepts Used](#iot--networking-concepts-used)
-- [Project Report](#project-report)
-- [Project Demonstration](#project-demonstration)
-- [Future Enhancements](#future-enhancements)
+### System Model
+<img src="Iot Model.jpeg" alt="System Model" width="500"/>
 
----
+### IoT Connection
+<img src="IoT connection.jpeg" alt="IoT Connection" width="500"/>
 
-# Project Overview
-
-This project aims to automate the billing process in shopping malls using IoT technology. Each product is associated with an RFID tag, and the shopping cart scans items automatically to calculate the total bill.
-
----
-
-# Project Images
-
-## Web Page
-
-![Web Page](<img width="1600" height="929" alt="IoT webpage" src="https://github.com/user-attachments/assets/9fd3dc35-863c-46f8-889e-32d94f2a6223" />
-)
-
----
-
-## System Model
-
-![System Model](Images/system_model.png)
-
----
-
-## IoT Connection
-
-![IoT Connection](Images/iot_connection.png)
-
----
-
-# Objectives
-
+## Objectives
 - Reduce checkout waiting time
 - Automate billing process
 - Improve shopping efficiency using IoT
 
----
-
-# Hardware Components
-
+## Hardware Components
 - ESP32-CAM
-- ESP32
+- ESP 32
 - RFID Tags
 - LCD Display
 
----
-
-# Software Components
-
+## Software Components
 - Arduino IDE
 - Embedded C / Arduino Programming
-- PHP
-- MySQL
-- HTML
-- CSS
-- JavaScript
+- MySQL for database
+- php for frontend and database integration
+- html, CSS and Javascript
 
----
+## Working Principle
+1. Products contain RFID tags
+2. ESP 32 CAM module scans the product
+3. ESP32 processes product data
+4. Price is displayed on LCD
+5. Billing data is sent over Wi-Fi
 
-# Working Principle
-
-1. Products contain RFID tags.
-2. ESP32-CAM scans the product.
-3. ESP32 processes the product data.
-4. Price is displayed on the LCD.
-5. Billing information is sent over Wi-Fi.
-
----
-
-# IoT & Networking Concepts Used
-
+## IoT & Networking Concepts Used
 - Wi-Fi Communication
 - Client–Server Architecture
 - TCP/IP Protocol
 - Real-time Data Transfer
 
----
+## Project Report
+The detailed project report is available here:  
+[View Project Report](Report.docx)
 
-# Project Report
+## Project Demonstration
+(https://youtube.com/shorts/Amb7axc3yww?si=_SnB9IrceqsSALrs)
+- Note: This demo video does not contain audio.  
+On-screen text has been added to explain the working of the project.
+- Note: The frontend files are static and shown for demonstration purposes only.
 
-📄 **Project Report:** [Report.pdf](Report.pdf)
-
----
-
-# Project Demonstration
-
-🎥 **YouTube Demo:** https://youtube.com/shorts/Amb7axc3yww?si=_SnB9IrceqsSALrs
-
-> **Note:** This demo video does not contain audio. On-screen text explains the working of the project.
-
----
-
-# Future Enhancements
-
+## Future Enhancements
 - Mobile application integration
 - Cloud-based billing
 - Inventory management system
 
----
-
-## 👨‍💻 Team Project
-
-This project was developed as part of an academic team project.
