@@ -32,7 +32,8 @@ This project aims to automate the billing process in shopping malls using IoT te
 
 ## Web Page
 
-![Web Page](Images/webpage.png)
+![Web Page](<img width="1600" height="929" alt="IoT webpage" src="https://github.com/user-attachments/assets/9fd3dc35-863c-46f8-889e-32d94f2a6223" />
+)
 
 ---
 
