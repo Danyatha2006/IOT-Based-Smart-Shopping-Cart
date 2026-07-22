@@ -50,7 +50,7 @@ and the cart scans items automatically to calculate the total bill.
 
 ## 📄 Project Report
 The detailed project report is available here:
-[📥 View Project Report](https://raw.githubusercontent.com/Danyatha2006/IOT-Based-Smart-Shopping-Cart/main/Report.pdf)
+[📄 View Project Report](https://github.com/Danyatha2006/IOT-Based-Smart-Shopping-Cart/blob/main/Report.pdf)
 
 ## Project Demonstration
 (https://youtube.com/shorts/Amb7axc3yww?si=_SnB9IrceqsSALrs)
